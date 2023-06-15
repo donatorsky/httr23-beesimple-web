@@ -3,6 +3,7 @@
  * @type {object}
  * @property {number} id - chat ID.
  * @property {string} status - chat status (WAITING, READY).
+ * @property {string} language - chat language (English, German).
  */
 
 /**
@@ -48,11 +49,13 @@ export function CreateTextChat(chat) {
 
 /**
  * @param {File} file
+ * @param {string} language
  * @returns {Promise<{id:number} | null>}
  */
-export function CreatePDFChat(file) {
+export function CreatePDFChat(file, language) {
 	const formData = new FormData();
 	formData.append('file', file);
+	formData.append('language', language);
 
 	return fetch(
 		`http://localhost:3000/chats/file`,

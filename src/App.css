@@ -46,3 +46,11 @@ body {
 .chats-menu .list-group .list-group-item:hover {
 	background-color: rgba(255, 255, 255, 0.1);
 }
+
+.messages .message {
+	max-width: 65%;
+}
+
+.messages .message.message-generating {
+	max-width: 100%;
+}
