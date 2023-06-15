@@ -1,15 +1,48 @@
-.nav {
+html,
+body,
+.container-fluid,
+.page {
+	height: 100%;
 }
 
-.nav.is-loading {
-	user-select: none;
-	background-color: rgba(0, 0, 0, 0.25);
+body {
+	font-family: 'Inter', sans-serif;
 }
 
-.chat {
+.page-row {
+	padding: 0;
+	overflow-y: auto;
+	max-height: 100%;
 }
 
-.chat.is-loading {
-	user-select: none;
-	background-color: rgba(0, 0, 0, 0.25);
+.chats-menu {
+	color: #F1EEEE;
+	background-color: #242424;
+	width: 305px;
+	border-radius: 16px;
+}
+
+.chats-menu h3 {
+	color: #fff;
+	background-color: #242424;
+	width: 305px;
+	border-radius: 16px;
+}
+
+.chats-menu .list-group {
+	background-color: transparent;
+}
+
+.chats-menu .list-group .list-group-item {
+	background-color: transparent;
+	border-color: transparent;
+	color: #F1EEEE;
+}
+
+.chats-menu .list-group .list-group-item.active {
+	background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chats-menu .list-group .list-group-item:hover {
+	background-color: rgba(255, 255, 255, 0.1);
 }

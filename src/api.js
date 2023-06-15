@@ -8,6 +8,7 @@
 /**
  * @typedef Message
  * @type {object}
+ * @property {string} contents - message contents.
  */
 
 /**
@@ -94,6 +95,27 @@ export function GetChatMessages(chatId) {
 	)
 		.then(assertResponseStatus(200, 'Failed to get chat messages'))
 		.then(logResponseData('Get chat messages'))
+		.catch(logFailure);
+}
+
+/**
+ * @param {number} chatId
+ * @param {Message} message
+ * @returns {Promise<{id:number} | null>}
+ */
+export function CreateChatMessage(chatId, message) {
+	return fetch(
+		`http://localhost:3000/chats/${chatId}/messages`,
+		{
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(message),
+		},
+	)
+		.then(assertResponseStatus(201, 'Failed to create chat message'))
+		.then(logResponseData('Create chat message'))
 		.catch(logFailure);
 }
 
